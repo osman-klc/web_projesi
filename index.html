@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proje Portalı | Ana Sayfa</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
 <body class="bg-light">
 
@@ -22,6 +23,35 @@
     <div class="container mt-5">
         <div class="text-center">
             <h1>Web Programlama Projesine Hoş Geldiniz</h1>
+            <div class="row mt-4 mb-4">
+    <div class="col-12 d-flex justify-content-between align-items-center">
+        <h2 class="fw-bold">Duyurular</h2>
+        <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#filterArea">
+            <i class="bi bi-filter"></i> Filtrele
+        </button>
+    </div>
+</div>
+
+<div class="collapse mb-4" id="filterArea">
+    <div class="card card-body border-0 shadow-sm bg-light">
+        <h5>Kategoriler</h5>
+        <div class="d-flex gap-3 flex-wrap">
+            <div class="form-check">
+                <input class="form-check-all" type="checkbox" id="yazilim">
+                <label class="form-check-label" for="yazilim">Yazılım</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-all" type="checkbox" id="saglik">
+                <label class="form-check-label" for="saglik">Sağlık</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-all" type="checkbox" id="fizik">
+                <label class="form-check-label" for="fizik">Fizik</label>
+            </div>
+            <button class="btn btn-primary btn-sm ms-auto">Uygula</button>
+        </div>
+    </div>
+</div>
              
             <p class="lead">Bu proje İsa,Osman ve Samet tarafıdan geliştirilmektedir.</p>
         </div>
@@ -30,6 +60,7 @@
             
             <div class="col-md-6 mb-4">
                 <div class="card shadow-sm h-100">
+                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="AI" style="height: 200px; object-fit: cover;">
                     <div class="card-body">
                         <span class="badge bg-primary mb-2">Makale</span>
                         <h5 class="card-title">Yapay Zekanın Geleceği</h5>
@@ -41,6 +72,7 @@
 
             <div class="col-md-6 mb-4">
                 <div class="card shadow-sm h-100 border-success">
+                    <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Library" style="height: 200px; object-fit: cover;">
                     <div class="card-body">
                         <span class="badge bg-success mb-2">Proje</span>
                         <h5 class="card-title">Akıllı Kütüphane Otomasyonu</h5>
