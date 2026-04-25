@@ -68,32 +68,57 @@
                         </div>
                     </div>
                 </div>
-            </div> <div class="admin-card mb-4">
-                <h5 class="mb-4"><i class="bi bi-file-earmark-check me-2"></i>Uzman Onay Kuyruğu</h5>
+            <div class="accordion mb-4" id="adminAccordion">
+    <div class="accordion-item border-0 shadow-sm admin-card">
+        <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button bg-white text-dark fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExperts">
+                <i class="bi bi-person-badge-fill me-2 text-warning"></i> Uzman Onay Bekleyenler (12 Başvuru)
+            </button>
+        </h2>
+        <div id="collapseExperts" class="accordion-collapse collapse show" data-bs-parent="#adminAccordion">
+            <div class="accordion-body">
                 <div class="table-responsive">
                     <table class="table table-hover align-middle">
                         <thead class="table-light">
                             <tr>
                                 <th>Ad Soyad</th>
-                                <th>Uzmanlık Alanı</th>
-                                <th>CV</th>
-                                <th>İşlemler</th>
+                                <th>Alan / Seviye</th>
+                                <th>E-posta</th>
+                                <th>CV & Portfolyo</th>
+                                <th>İşlem</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Ahmet Yılmaz</td>
-                                <td>Yapay Zeka / NLP</td>
-                                <td><a href="#" class="btn btn-sm btn-link"><i class="bi bi-file-pdf text-danger"></i> cv_ahmet.pdf</a></td>
                                 <td>
-                                    <button class="btn btn-sm btn-success">Onayla</button>
-                                    <button class="btn btn-sm btn-outline-danger">Reddet</button>
+                                    <strong>Ahmet Yılmaz</strong><br>
+                                    <small class="text-muted">Başvuru: 2 saat önce</small>
+                                </td>
+                                <td>
+                                    <span class="badge bg-info text-dark">Yapay Zeka</span><br>
+                                    <small>Senior (5+ Yıl)</small>
+                                </td>
+                                <td>ahmet@email.com</td>
+                                <td>
+                                    <div class="btn-group">
+                                        <a href="#" class="btn btn-sm btn-outline-danger"><i class="bi bi-file-pdf"></i> CV</a>
+                                        <a href="#" class="btn btn-sm btn-outline-primary"><i class="bi bi-link-45deg"></i> Link</a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex gap-2">
+                                        <button class="btn btn-sm btn-success w-100" title="Onayla"><i class="bi bi-check-lg"></i></button>
+                                        <button class="btn btn-sm btn-danger w-100" title="Reddet"><i class="bi bi-trash"></i></button>
+                                    </div>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
 
             <div class="admin-card">
                 <h5>Duyuruları Yönet</h5>
