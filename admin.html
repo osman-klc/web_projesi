@@ -42,6 +42,34 @@
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                 <h1 class="h2">Yönetim Ekranı</h1>
             </div>
+            <div class="admin-card mb-4 shadow-sm border-0">
+    <h5 class="mb-3 text-primary"><i class="bi bi-pencil-square me-2"></i>Yeni Duyuru Paylaş</h5>
+    <form>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label class="form-label small fw-bold">Duyuru Başlığı</label>
+                <input type="text" class="form-control" placeholder="Örn: Yapay Zeka Etkinliği Başlıyor">
+            </div>
+            <div class="col-md-6 mb-3">
+                <label class="form-label small fw-bold">Kategori</label>
+                <select class="form-select">
+                    <option selected>Seçiniz...</option>
+                    <option value="yazilim">Yazılım / Backend</option>
+                    <option value="yapay-zeka">Yapay Zeka</option>
+                    <option value="siber">Siber Güvenlik</option>
+                    <option value="havacilik">Havacılık</option>
+                </select>
+            </div>
+            <div class="col-12 mb-3">
+                <label class="form-label small fw-bold">Duyuru İçeriği</label>
+                <textarea class="form-control" rows="3" placeholder="Duyuru detaylarını buraya yazınız..."></textarea>
+            </div>
+            <div class="col-12 text-end">
+                <button type="submit" class="btn btn-primary px-4"><i class="bi bi-send me-2"></i>Yayınla</button>
+            </div>
+        </div>
+    </form>
+</div>
 
             <div class="row mb-4">
                 <div class="col-md-4">
