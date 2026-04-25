@@ -37,6 +37,18 @@
             </div>
         </div>
     </div>
+    <script>
+    const loginForm = document.querySelector('form');
+
+    loginForm.addEventListener('submit', function(e) {
+        e.preventDefault(); // Sayfanın yenilenmesini engeller
+
+        // Burada normalde kullanıcı adı/şifre kontrolü olur
+        // Şimdilik direkt yönlendirme yapıyoruz:
+
+        window.location.href = "normalkullanıcı.html";
+    });
+</script>
 
 </body>
 </html>

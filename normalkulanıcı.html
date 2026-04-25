@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yüksek Teknoloji Topluluğu - Keşfet</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <style>
+        body { background-color: #f4f7f6; }
+        .nav-tech { background: #1a1a1a; }
+        .project-card { border: none; border-radius: 15px; transition: transform 0.2s; }
+        .project-card:hover { transform: translateY(-5px); }
+        .sidebar-card { border-radius: 15px; border: none; }
+        .filter-btn { border-radius: 20px; font-size: 13px; }
+        .restricted-action { cursor: pointer; }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-dark nav-tech mb-4">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#"><i class="bi bi-cpu me-2"></i>HTS Keşfet</a>
+        <div class="d-flex align-items-center">
+            <span class="text-white-50 me-3 small">Hoş geldiniz</span>
+            <a href="index.html" class="btn btn-sm btn-outline-danger">Çıkış</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card sidebar-card p-3 mb-4 shadow-sm">
+                <h6 class="fw-bold mb-3 small text-uppercase">Kategoriye Göre Filtrele</h6>
+                <div class="d-flex flex-wrap gap-2">
+                    <button class="btn btn-primary filter-btn">Hepsi</button>
+                    <button class="btn btn-outline-secondary filter-btn">Yazılım</button>
+                    <button class="btn btn-outline-secondary filter-btn">Yapay Zeka</button>
+                    <button class="btn btn-outline-secondary filter-btn">Siber Güvenlik</button>
+                    <button class="btn btn-outline-secondary filter-btn">Havacılık</button>
+                    <button class="btn btn-outline-secondary filter-btn">Robotik</button>
+                </div>
+            </div>
+
+            <h5 class="fw-bold mb-3">Uzman Projeleri</h5>
+            
+            <div class="card project-card shadow-sm mb-3">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between mb-2">
+                        <span class="badge bg-primary-subtle text-primary p-2">Yapay Zeka</span>
+                        <small class="text-muted">Paylaşan: Uzman Ahmet Demir</small>
+                    </div>
+                    <h5 class="fw-bold">Otonom Tarım Robotu Görüntü İşleme</h5>
+                    <p class="text-secondary small">Tarla üzerindeki zararlı otları tespit edip ilaçlama yapan otonom bir sistemin backend ve görüntü işleme detayları...</p>
+                    <hr>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="d-flex gap-3">
+                            <span class="restricted-action text-secondary small" onclick="showRestrictedAlert()"><i class="bi bi-hand-thumbs-up"></i> 42 Beğeni</span>
+                            <span class="restricted-action text-secondary small" onclick="showRestrictedAlert()"><i class="bi bi-chat-dots"></i> 12 Yorum</span>
+                        </div>
+                        <button class="btn btn-sm btn-link text-decoration-none">Devamını Oku</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card project-card shadow-sm mb-3">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between mb-2">
+                        <span class="badge bg-success-subtle text-success p-2">Siber Güvenlik</span>
+                        <small class="text-muted">Paylaşan: Uzman Elif Kurt</small>
+                    </div>
+                    <h5 class="fw-bold">Kurumsal Ağlar İçin İzinsiz Giriş Tespit Sistemi</h5>
+                    <p class="text-secondary small">Ağ trafiğini gerçek zamanlı analiz eden ve anomali tespiti yapan açık kaynaklı bir güvenlik mimarisi...</p>
+                    <hr>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="d-flex gap-3">
+                            <span class="restricted-action text-secondary small" onclick="showRestrictedAlert()"><i class="bi bi-hand-thumbs-up"></i> 28 Beğeni</span>
+                            <span class="restricted-action text-secondary small" onclick="showRestrictedAlert()"><i class="bi bi-chat-dots"></i> 7 Yorum</span>
+                        </div>
+                        <button class="btn btn-sm btn-link text-decoration-none">Devamını Oku</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="card sidebar-card shadow-sm mb-4">
+                <div class="card-header bg-white fw-bold py-3">Önümüzdeki Etkinlikler</div>
+                <div class="card-body p-0">
+                    <div class="list-group list-group-flush">
+                        <div class="list-group-item p-3">
+                            <div class="d-flex w-100 justify-content-between small mb-1">
+                                <span class="text-primary fw-bold">28 Nisan</span>
+                                <span class="badge bg-info">Workshop</span>
+                            </div>
+                            <h6 class="mb-1 fw-bold">Python ile Veri Analizi</h6>
+                            <p class="mb-0 text-muted small">Mühendislik Fakültesi B Blok</p>
+                        </div>
+                        <div class="list-group-item p-3">
+                            <div class="d-flex w-100 justify-content-between small mb-1">
+                                <span class="text-primary fw-bold">05 Mayıs</span>
+                                <span class="badge bg-warning text-dark">Zirve</span>
+                            </div>
+                            <h6 class="mb-1 fw-bold">ÜNİDES Teknoloji Zirvesi</h6>
+                            <p class="mb-0 text-muted small">Atatürk Üniversitesi Kültür Merkezi</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer bg-light text-center py-2">
+                    <a href="#" class="small text-decoration-none text-secondary">Tümünü Gör</a>
+                </div>
+            </div>
+
+            <div class="card sidebar-card bg-primary text-white shadow-sm p-3">
+                <h6 class="fw-bold"><i class="bi bi-info-circle me-2"></i>Duyuru</h6>
+                <p class="small mb-0">Teknofest başvuruları için takım arkadaşı arayanlar "İletişim" kısmından form doldurabilir!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="toast-container position-fixed bottom-0 start-50 translate-middle-x p-3">
+    <div id="restrictedToast" class="toast align-items-center text-white bg-dark border-0 shadow-lg" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex p-2">
+            <div class="toast-body">
+                <i class="bi bi-shield-lock-fill text-warning me-2"></i>
+                Sadece uzman kişiler yorum, beğeni ve proje paylaşımı yapabilir. 
+                <br>
+                <a href="register.html" class="text-info fw-bold">Uzman kaydı yapmak için tıklayınız.</a>
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    function showRestrictedAlert() {
+        const toastEl = document.getElementById('restrictedToast');
+        const toast = new bootstrap.Toast(toastEl, { delay: 5000 });
+        toast.show();
+    }
+
+    // Filtreleme butonlarına basit bir "aktif" özelliği ekleyelim
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.replace('btn-primary', 'btn-outline-secondary'));
+            btn.classList.replace('btn-outline-secondary', 'btn-primary');
+        });
+    });
+</script>
+
+</body>
+</html>
