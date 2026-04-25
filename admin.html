@@ -90,7 +90,7 @@ body.dark-theme .accordion-button { background-color: #1c2128 !important; color:
         </div>
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a class="nav-link active" href="#"><i class="bi bi-megaphone me-2"></i> <span>Duyuru Paylaş</span></a>
+                <a class="nav-link active" href="#" id="btnDuyuruPaylas"><i class="bi bi-megaphone me-2"></i> <span>Duyuru Paylaş</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#"><i class="bi bi-people me-2"></i> <span>Kullanıcı İşlemleri</span></a>
@@ -130,27 +130,32 @@ body.dark-theme .accordion-button { background-color: #1c2128 !important; color:
             </div>
         </div>
 
-        <div class="admin-card">
-            <h5 class="text-primary mb-3"><i class="bi bi-pencil-square me-2"></i>Yeni Duyuru Paylaş</h5>
-            <div class="row">
-                <div class="col-md-6 mb-3">
-                    <input type="text" class="form-control" placeholder="Başlık">
-                </div>
-                <div class="col-md-6 mb-3">
-                    <select class="form-select">
-                        <option>Kategori Seçin</option>
-                        <option>Yazılım</option>
-                        <option>Yapay Zeka</option>
-                    </select>
-                </div>
-                <div class="col-12 mb-3">
-                    <textarea class="form-control" rows="2" placeholder="Duyuru içeriği..."></textarea>
-                </div>
-                <div class="col-12 text-end">
-                    <button class="btn btn-primary px-4">Yayınla</button>
-                </div>
-            </div>
+        <div id="duyuruFormu" class="admin-card mb-4" style="display: none; border-left: 5px solid #ffc107;">
+    <h5 class="text-primary mb-3"><i class="bi bi-pencil-square me-2"></i>Yeni Duyuru Yayınla</h5>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <input type="text" class="form-control" placeholder="Duyuru Başlığı">
         </div>
+        <div class="col-md-6 mb-3">
+            <select class="form-select">
+                <option selected disabled>Kategori Seçin</option>
+                <option>Yazılım Geliştirme</option>
+                <option>Yapay Zeka & Veri Bilimi</option>
+                <option>Siber Güvenlik</option>
+                <option>Robotik & Otomasyon</option>
+                <option>Havacılık & Uzay (Teknofest)</option>
+                <option>Eğitim & Workshop</option>
+                <option>Staj & Kariyer</option>
+            </select>
+        </div>
+        <div class="col-12 mb-3">
+            <textarea class="form-control" rows="3" placeholder="İçerik detaylarını buraya yazın..."></textarea>
+        </div>
+        <div class="col-12 text-end">
+            <button class="btn btn-warning px-4 fw-bold">Yayınla</button>
+        </div>
+    </div>
+</div>
 
         <div class="accordion mb-4" id="expertAccordion">
             <div class="accordion-item border-0 admin-card p-0 overflow-hidden">
@@ -267,7 +272,22 @@ body.dark-theme .accordion-button { background-color: #1c2128 !important; color:
                 this.closest('.col-md-6').remove();
             }
         });
+
     });
+    // Paneldeki Duyuru Paylaş butonuna basınca formu göster/gizle
+const btnDuyuru = document.getElementById('btnDuyuruPaylas');
+const formDuyuru = document.getElementById('duyuruFormu');
+
+btnDuyuru.addEventListener('click', function(e) {
+    e.preventDefault(); // Sayfanın üste fırlamasını engeller
+    
+    if (formDuyuru.style.display === "none") {
+        formDuyuru.style.display = "block"; // Formu göster
+        formDuyuru.scrollIntoView({ behavior: 'smooth' }); // Formun olduğu yere yumuşakça kaydır
+    } else {
+        formDuyuru.style.display = "none"; // Formu tekrar gizle
+    }
+});
 </script>
 </body>
 </html>
