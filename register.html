@@ -43,9 +43,26 @@
     </div>
 
     <div class="mb-3">
-        <label class="form-label">Şifre</label>
-        <input type="password" class="form-control" required>
+    <label for="registerPassword" class="form-label small text-muted">Şifre</label>
+    <div class="input-group">
+        <span class="input-group-text bg-white border-end-0"><i class="bi bi-lock"></i></span>
+        <input type="password" id="registerPassword" class="form-control border-start-0" placeholder="Şifrenizi oluşturun" required>
     </div>
+    <div id="passwordRequirements" class="text-danger small mt-2" style="font-size: 0.75rem;">
+        <i class="bi bi-exclamation-circle-fill me-1"></i> Şifreniz en az 8 karakter olmalı; en az bir büyük harf, bir küçük harf ve bir rakam içermelidir.
+    </div>
+</div>
+
+<div class="mb-3">
+    <label for="confirmPassword" class="form-label small text-muted">Şifre Tekrar</label>
+    <div class="input-group">
+        <span class="input-group-text bg-white border-end-0"><i class="bi bi-shield-check"></i></span>
+        <input type="password" id="confirmPassword" class="form-control border-start-0" placeholder="Şifrenizi tekrar girin" required>
+    </div>
+    <div id="passwordError" class="text-danger small mt-1" style="display: none;">
+        <i class="bi bi-x-circle-fill me-1"></i> Şifreler birbiriyle eşleşmiyor!
+    </div>
+</div>
 
     <button type="submit" class="btn btn-primary w-100">Kayıt Başvurusunu Tamamla</button>
 </form>
@@ -59,20 +76,62 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-    function toggleCVUpload() {
-        const roleSelect = document.getElementById('roleSelect');
-        const cvSection = document.getElementById('cvUploadSection');
-        
-        if (roleSelect.value === 'expert') {
-            cvSection.classList.remove('d-none'); // "Uzman" seçilirse alanı göster
-        } else {
-            cvSection.classList.add('d-none');    // Diğer durumlarda gizle
-        }
+  // HTML'deki id="cvUploadSection" ile aynı olmalı
+const userRoleSelect = document.getElementById('roleSelect'); 
+const pdfArea = document.getElementById('cvUploadSection'); 
+
+userRoleSelect.addEventListener('change', function() {
+    // Seçilen değer "expert" ise (value="expert" yapmıştın)
+    if (this.value === "expert") {
+        pdfArea.classList.remove('d-none'); // Bootstrap d-none'ı kaldırır
+        pdfArea.style.display = 'block';
+        document.querySelector('#cvUploadSection input').setAttribute('required', 'true');
+    } else {
+        pdfArea.style.display = 'none';
+        document.querySelector('#cvUploadSection input').removeAttribute('required');
     }
+});
+    // Formu seçelim
+    const registerForm = document.querySelector('form');
+
+    registerForm.addEventListener('submit', function(e) {
+        const password = document.getElementById('registerPassword').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+        const errorDiv = document.getElementById('passwordError');
+        const requirementsDiv = document.getElementById('passwordRequirements');
+
+        // Şifre Güçlülük Kontrolü: En az 8 karakter, 1 Büyük, 1 Küçük, 1 Sayı
+        const strongPasswordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+        const isStrong = strongPasswordRegex.test(password);
+
+        let hasError = false;
+
+        // 1. Kriter Kontrolü (Kırmızı/Yeşil Renk Değişimi)
+        if (!isStrong) {
+            requirementsDiv.style.color = '#dc3545'; // Hatalıysa Kırmızı
+            requirementsDiv.classList.add('fw-bold');
+            hasError = true;
+        } else {
+            requirementsDiv.style.color = '#198754'; // Geçerliyse Yeşil
+            requirementsDiv.innerHTML = '<i class="bi bi-check-circle-fill me-1"></i> Şifre kriterleri sağlandı.';
+        }
+
+        // 2. Eşleşme Kontrolü
+        if (password !== confirmPassword) {
+            errorDiv.style.display = 'block';
+            hasError = true;
+        } else {
+            errorDiv.style.display = 'none';
+        }
+
+        // Hata varsa formu gönderme (Backend'e gitmesin)
+        if (hasError) {
+            e.preventDefault();
+        }
+    });
     </script>
 
 </body>
 </html>
 
-</body>
-</html>
+>
