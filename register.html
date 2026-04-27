@@ -27,23 +27,9 @@
         <input type="email" class="form-control" required>
     </div>
 
+    
     <div class="mb-3">
-        <label class="form-label">Üyelik Tipi</label>
-        <select class="form-select" id="roleSelect" required onchange="toggleCVUpload()">
-            <option value="user">Normal Kullanıcı</option>
-            <option value="expert">Uzman (CV Gereklidir)</option>
-            <option value="admin">Admin</option>
-        </select>
-    </div>
-
-    <div class="mb-3 d-none" id="cvUploadSection">
-        <label class="form-label text-danger fw-bold">CV Yükle (PDF formatında)</label>
-        <input type="file" class="form-control border-danger" accept=".pdf">
-        <small class="text-muted">Uzman başvuruları admin onayından geçmektedir.</small>
-    </div>
-
-    <div class="mb-3">
-    <label for="registerPassword" class="form-label small text-muted">Şifre</label>
+     <label for="registerPassword" class="form-label small text-muted">Şifre</label>
     <div class="input-group">
         <span class="input-group-text bg-white border-end-0"><i class="bi bi-lock"></i></span>
         <input type="password" id="registerPassword" class="form-control border-start-0" placeholder="Şifrenizi oluşturun" required>
