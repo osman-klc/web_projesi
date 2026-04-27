@@ -9,6 +9,25 @@
     <style>
         body { background-color: #f4f7f6; font-family: sans-serif; }
         .card { border: none; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        /* Sayfa Açıldığında Kartların Süzülmesini Sağlar */
+@keyframes fadeInUp {
+    from { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+.project-card { 
+    animation: fadeInUp 0.6s ease-out both; 
+}
+
+/* Kartlar sırayla gelsin (biri biterken diğeri başlasın) */
+.project-card:nth-child(2) { animation-delay: 0.2s; }
+.project-card:nth-child(3) { animation-delay: 0.4s; }
     </style>
 </head>
 <body class="d-flex align-items-center vh-100">
